@@ -150,13 +150,11 @@ if (canvas.getContext) {
   headerBtnEvent(ctx);
   mouseEvent(ctx);
 }
+//設定初始點座標
 function drawPoint(ctx) {
   ctx.beginPath();
   ctx.moveTo(startPointX, startPointY);
-  // ctx.lineWidth = 1;
   ctx.fillStyle = toolColor;
-  // ctx.arc(startPointX, startPointY, 2.5, 0, 2*Math.PI);
-  // ctx.fill();
   ctx.lineTo(startPointX, startPointY);
   switch(toolModel) {
     case 'hollowSquare':
@@ -165,8 +163,8 @@ function drawPoint(ctx) {
       break;
   }
 }
+//畫筆及橡皮差工具
 function brushTool(ctx) {
-  // ctx.beginPath();
   switch (toolModel) {
     case 'brush':
       ctx.strokeStyle = toolColor;
@@ -179,18 +177,17 @@ function brushTool(ctx) {
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
   ctx.moveTo(startPointX, startPointY);
-  // ctx.arc(movePointX, movePointY, 0.5 * (lineSize - 1), 0, 2*Math.PI);
-  // ctx.arc(x, y, 0.5 * (lineSize - 1), 0, 2*Math.PI);
   ctx.lineTo(movePointX, movePointY);
   ctx.stroke();
 }
+//矩形工具
 function squareTool(ctx) {
   ctx.putImageData(squareBeforeImg, 0, 0);
+  ctx.strokeStyle = toolColor;
   ctx.fillStyle = toolColor;
   ctx.lineWidth = lineSize;
   let width = movePointX - startPointX;
   let height = movePointY - startPointY;
-  // ctx2.clearRect(startPointX, startPointY, width, height);
   ctx.strokeRect(startPointX, startPointY, width, height);
   switch (toolModel) {
     case 'solidSquare': {
@@ -199,8 +196,8 @@ function squareTool(ctx) {
     }
   }
 }
+//滑鼠監聽
 function mouseEvent(ctx) {
-  //滑鼠監聽
   window.addEventListener('mousedown', mouseDownHandler);
   //按下滑鼠的事件
   function mouseDownHandler(e) {
@@ -209,6 +206,7 @@ function mouseEvent(ctx) {
     drawPoint(ctx);
     window.addEventListener('mousemove', mouseMoveHandler);
   }
+  //滑鼠移動事件
   function mouseMoveHandler(e) {
     movePointX = e.clientX;
     movePointY = e.clientY;
@@ -226,6 +224,7 @@ function mouseEvent(ctx) {
     } 
     window.addEventListener('mouseup', mouseUpHandler);
   }
+  //滑鼠放開事件
   function mouseUpHandler(e) {
     undoList.push(currentImg);
     currentImg = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -238,6 +237,7 @@ function mouseEvent(ctx) {
 }
 //header功能列按鈕監聽
 function headerBtnEvent(ctx) {
+  //按功能鍵時不能畫畫
   headerMenu.addEventListener('mousedown', (e) => {
     e.stopPropagation();
   })
@@ -296,6 +296,7 @@ function headerBtnEvent(ctx) {
     }
   })
 }
+//全部清除功能
 function clear(ctx) {
   undoList = [];
   currentImg;
