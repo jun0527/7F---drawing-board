@@ -1,0 +1,139 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  ul {
+    padding: 16px 0;
+  }
+  a {
+    margin-left: 20px;
+    margin-right: 20px;
+    span {
+      font-size: 48px;
+      margin-right: 8px;
+    }
+    &.disabled {
+      opacity: 0.5;
+      cursor: no-drop;
+    }
+  }
+  .expandBtn {
+    bottom: -28px;
+    span {
+      margin-top: 24px;
+    }
+  }
+}
+.expandBtn {
+  position: absolute;
+  left: calc(50% - 28px);
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 4px 16px;
+  cursor: pointer;
+  span {
+    display: block;
+    font-size: 24px;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 40px;
+  width: 100%;
+  .expandBtn {
+    top: -28px;
+    span {
+      margin-bottom: 24px;
+    }
+  }
+  .expandLessBtn {
+    padding: 17.5px;
+    top: -59px;
+    span {
+      margin-bottom: 0;
+      font-size: 30px;
+    }
+  }
+}
+.footerMenu {
+  background: #fff;
+  padding: 16px 32px 16px 42px;
+  border-radius: 40px;
+  z-index: 10;
+  >li {
+    margin-left: 40px;
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+  input {
+    width: 74px;
+    height: 48px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    background: #e8e8e8;
+    border: none;
+    border-radius: 24px;
+    margin: 0 8px 0 16px;
+  }
+}
+.modelListBtn {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 5px;
+  margin-left: 8px;
+  &:nth-child(1) {
+    margin-left: 16px;
+  }
+  &.active {
+    border-color: #000;
+  }
+  &:hover {
+    background: rgba(114, 114, 114, 0.1);
+  }
+  span {
+    display: block;
+    font-size: 30px;
+  }
+}
+// .modelList {
+//   span {
+//     font-size: 30px;
+//   }
+// }
+.colorBtnList {
+  li {
+    margin-left: 8px;
+    &:nth-child(1) {
+      margin-left: 16px;
+    }
+    &:nth-child(1) .colorBtn {
+      border: 2px solid #000;
+    }
+    span {
+      opacity: 0;
+    }
+    &.active span {
+      opacity: 1;
+    }
+  }
+  .colorBtn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+// .drawingBoard {
+//   background: #E8E8E8;
+// }

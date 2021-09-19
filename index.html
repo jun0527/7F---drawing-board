@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+  <header class="header">
+    <ul class="js-headerMenu d-flex jc-center">
+      <li data-function="save"><a class="d-flex ai-center" href="javascript:;" data-function="save">
+        <span class="material-icons" data-function="save">
+          save
+        </span>
+        SAVE
+      </a></li>
+      <li data-function="clearAll"><a class="d-flex ai-center" href="javascript:;" data-function="clearAll">
+        <span class="material-icons" data-function="clearAll">
+          crop_free
+        </span>
+        CLEAR ALL
+      </a></li>
+      <li data-function="undo"><a class="d-flex ai-center disabled" href="javascript:;" data-function="undo">
+        <span class="material-icons" data-function="undo">
+          undo
+        </span>
+        UNDO
+      </a></li>
+      <li data-function="redo"><a class="d-flex ai-center disabled" href="javascript:;" data-function="redo">
+        <span class="material-icons" data-function="redo">
+          redo
+        </span>
+        REDO
+      </a></li>
+    </ul>
+    <button class="js-expandBtn expandBtn" type="button">
+      <span class="material-icons">
+        expand_less
+      </span>
+    </button>
+  </header>
+  <footer class="footer">
+    <ul class="js-footerMenu footerMenu d-flex ai-center">
+      <li class="d-flex ai-center">
+        <span>MODEL:</span>
+        <ul class="js-modelList modelList d-flex ai-center">
+          <li class="modelListBtn active" data-model="brush"><a href="javascript:;" data-model="brush">
+            <span class="material-icons" data-model="brush">
+              brush
+            </span>
+          </a></li>
+          <li class="modelListBtn" data-model="hollowSquare"><a href="javascript:;" data-model="hollowSquare">
+            <span class="material-icons-outlined" data-model="hollowSquare">
+              stop
+            </span>
+          </a></li>
+          <li class="modelListBtn" data-model="solidSquare"><a href="javascript:;" data-model="solidSquare">
+            <span class="material-icons" data-model="solidSquare">
+              stop
+            </span>
+          </a></li>
+          <li class="modelListBtn" data-model="erase"><a href="javascript:;" data-model="erase">
+            <span class="material-icons-outlined rotate-45" data-model="erase">
+              smartphone
+            </span>
+          </a></li>
+        </ul>
+      </li>
+      <li>
+        <span>SIZE:</span>
+        <input class="js-sizeInput" type="number" value="10">
+        <span>px</span>
+      </li>
+      <li class="d-flex ai-center">
+        <span>COLOR:</span>
+        <ul class="js-colorBtnList colorBtnList d-flex">
+          <li><button class="colorBtn bg-white" type="button" data-color="#fff">
+            <span class="material-icons" data-color="#fff">
+              done
+            </span>
+          </button></li>
+          <li class="active"><button class="colorBtn bg-dark" type="button" data-color="#000">
+            <span class="material-icons text-white" data-color="#000">
+              done
+            </span>
+          </button></li>
+          <li><button class="colorBtn bg-green-light" type="button" data-color="#9BFFCD">
+            <span class="material-icons" data-color="#9BFFCD">
+              done
+            </span>
+          </button></li>
+          <li><button class="colorBtn bg-green" type="button" data-color="#00CC99">
+            <span class="material-icons" data-color="#00CC99">
+              done
+            </span>
+          </button></li>
+          <li><button class="colorBtn bg-green-dark" type="button" data-color="#01936F">
+            <span class="material-icons" data-color="#01936F">
+              done
+            </span>
+          </button></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="js-expandBtn expandBtn" type="button">
+      <span class="material-icons">
+        expand_more
+      </span>
+    </button>
+  </footer>
+  <canvas class="js-drawingBoard drawingBoard" width="100" height="100" style="background: #E8E8E8;"></canvas>
+  <script src="js/all.js"></script>
+</body>
+</html>

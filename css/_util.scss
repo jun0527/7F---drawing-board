@@ -1,0 +1,34 @@
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background: $color;
+  }
+  .text-#{$name} {
+    color: $color;
+  }
+}
+.d {
+  &-flex {
+    display: flex;
+  }
+  &-none {
+    display: none;
+  }
+}
+.jc {
+  &-center {
+    justify-content: center;
+  }
+}
+.ai {
+  &-center {
+    align-items: center;
+  }
+}
+.z-index {
+  &-1 {
+    z-index: 1;
+  }
+}
+.rotate-45 {
+  transform: rotate(45deg);
+}
